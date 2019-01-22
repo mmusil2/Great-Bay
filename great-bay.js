@@ -64,9 +64,10 @@ var connection = mysql.createConnection({
                         bid: answers.bid
                     },
                 function(err, res) {
-                    // console.log(res.affectedRows + " auction added\n");
+                    console.log(res.affectedRows + " auction added\n");
                     // Call updateProduct AFTER the INSERT completes
                     // updateSong();
+                    readAuctions();
                 }
             );
         
@@ -99,17 +100,28 @@ var connection = mysql.createConnection({
                         }
                     ],
                 function(err, res) {
-                    console.log(res.affectedRows + " auction added\n");
+                    // console.log(res.affectedRows + " auction added\n");
                     // Call updateProduct AFTER the INSERT completes
                     // updateSong();
+                    readAuctions();
                 }
             );
         
-          // logs the actual query being run
-          console.log(query.sql);
+            // logs the actual query being run
+            console.log(query.sql);
             });
+            // connection.end();
         }
-    connection.end();
     });
     
   });
+
+  function readAuctions() {
+    console.log("Selecting all auctions...\n");
+    connection.query("SELECT * FROM auctions", function(err, res) {
+      if (err) throw err;
+      // Log all results of the SELECT statement
+      console.log(res);
+      connection.end();
+    });
+  }
