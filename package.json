@@ -1,0 +1,25 @@
+{
+  "name": "ice-cream-crud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "iceCreamCRUD.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^6.2.1",
+    "mysql": "^2.13.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmusil2/Great-Bay.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/mmusil2/Great-Bay/issues"
+  },
+  "homepage": "https://github.com/mmusil2/Great-Bay#readme"
+}
