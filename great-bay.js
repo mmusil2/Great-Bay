@@ -1,5 +1,10 @@
+require("dotenv").config();
+
 var inquirer = require("inquirer");
 var mysql = require("mysql");
+var keys = require("./keys.js");
+
+var password =  keys.mysql.password;
 
 var connection = mysql.createConnection({
     host: "localhost",
@@ -11,7 +16,7 @@ var connection = mysql.createConnection({
     user: "root",
   
     // Your password
-    password: "password",
+    password: password,
     database: "greatbay_db"
 });
 
